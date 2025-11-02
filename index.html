@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Popepopepopopepo Game</title>
+  
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header role="banner">
+    <nav aria-label="หลัก" id="main-nav">
+      <div class="brand">
+        <a href="#home" id="logo">Popepopepopopepo Game Project</a>
+      </div>
+      <ul id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#input">I/O</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#members">Members</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="home" role="main">
+    <section id="start">
+      <div>
+        <h2 id="arduino-heading">Arduino</h2>
+        <p>Physical Computing Project 2025</p>
+        <br>
+        <p id="scroll">scroll down to read</p>
+        <img src="image/cat.JPG" alt="">
+      </div>
+    </section>
+
+    <!-- About Section -->
+      <section id="about">
+        <img src="image/cover-about.jpg" alt="">
+        <div class="about-text">
+          <h2 id="about-heading">About this Project</h2>
+          <br>
+          <p id="paragraph">
+            โปรเจค Popepopepopopepo Game เป็นโปรเจคที่ใช้บอร์ด Arduino UNO R4 WiFi ในการต่อวงจรเกม LED Sequence โดยการเล่นเกมนี้ คือ 
+            ผู้เล่นต้องกดไฟที่กระพริบตามลำดับให้ถูกต้อง ภายในระยะเวลาที่โปรแกรมกำหนดไว้ หากแพ้ เกมจะรีเซตเริ่มต้นใหม่ที่ Level 1 ซึ่งเกมนี้สามารถเล่นได้เรื่อย ๆ 
+            จำนวนครั้งที่ต้องกดปุ่ม แปรผันตามจำนวน Level ที่เพิ่มขึ้น แสดงผลลัพธ์ของการเล่นเกมบน Web browser ได้แก่ 
+            1. Level ที่ผ่านล่าสุด (อัปเดตเรื่อย ๆ ขณะเล่นเกม) 2. Score Broad 5 อันดับสูงสุด และเมื่อกดปุ่ม "Reset Scores" คือ การรีเซต Score Broad นอกจากนี้ยังมีเสียงไฟกระพริบที่เป็นเสียงโน้ตดนตรีอีกด้วย 
+          </p>
+        </div>
+      </section>
+
+
+    <!-- Components Section -->
+    <section id="components">
+      <div id="incomponent">
+        <h2 id="components-heading">Components</h2>
+        <div id="component-list">
+          <article class="component" id="component-1">
+              <img src="image/image01.jpg" alt="">
+            <h3>Arduino Uno R4 WIFI </h3>
+          </article>
+          <article class="component" id="component-2">
+              <img src="image/image02.png" alt="">
+            <h3>Resistors</h3>
+          </article>
+          <article class="component" id="component-3">
+              <img src="image/image03.jpg" alt="">
+            <h3>Switches</h3>
+          </article>
+          <article class="component" id="component-4">
+              <img src="image/image04.jpg" alt="">
+            <h3>Breadboard</h3>
+          </article>
+          <article class="component" id="component-5">
+              <img src="image/image05.webp" alt="">
+            <h3>LED</h3>
+          </article>
+          <article class="component" id="component-6">
+              <img src="image/image06.webp" alt="">
+            <h3>Passive Buzzer</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <!-- input -->
+  <section id="input" aria-labelledby="input-heading">
+    <div class="containers">
+      <div id="input-box">
+        <h2 id="input-heading">Input</h2>
+        <br>
+        <p id="paragraph">
+            Input ทั้งหมด 4 ปุ่มกด (Switches) ซึ่งใช้แทนสีแต่ละดวงของ (LED) โดยจะให้ผู้เล่นกดตามลำดับที่ไฟแสดงออกมา เพื่อทดสอบความจำ
+        </p>
+        <br>
+        <img src="image/cat3.JPG" alt="">
+      </div>
+
+      <!-- Output -->
+      <div id="Output-box">
+        <h2 id="Output-heading">Output</h2>
+        <br>
+        <p id="paragraph">
+              Output คือ แสง (LED) + เสียง (Buzzer) + ข้อความ (Serial Monitor) ที่ทำงานร่วมกันแบบเรียลไทม์เพื่อให้ผู้เล่นเห็นผลลัพธ์ ของเกมได้ครบทั้งภาพและเสียง
+        </p>
+        <br>
+        <img src="image/cat2.JPG" alt="">
+      </div>
+
+      <!-- Process -->
+      <section id="process" aria-labelledby="process-heading">
+        <div id="process-box">
+          <h2 id="process-heading">Process</h2>
+          <br>
+          <p id="paragraph">
+                1. เริ่มต้นระบบ: Arduino ทำการสุ่มลำดับของ LED ด้วย random() และระบบเริ่มจาก Level 1<br>
+                2. แสดงลำดับไฟ (Game Sequence): LED แต่ละดวงจะกระพริบตามลำดับที่ Arduino สุ่มไว้ และผู้เล่นต้องจำลำดับนี้ให้ได้<br>
+                3. รอการตอบจากผู้เล่น: เมื่อผู้เล่นกดปุ่ม ระบบจะตรวจว่าเป็นปุ่มที่ถูกต้องตามลำดับหรือไม่ หากถูก ระบบจะเล่นเสียง/ไฟยืนยัน หากผิด ระบบจะกระพริบไฟทั้งหมดเพื่อแสดงว่า Game Over
+                4. เพิ่มระดับความยาก: เมื่อผู้เล่นตอบถูกครบ ระบบจะเพิ่มความยากใน Level ถัดไปและเล่นต่อ เล่นได้เรื่อย ๆ จนกว่าจะกดผิด<br>
+                5. จบเกม / รีเซต: เมื่อผู้เล่นกดผิด ระบบจะรีเซตค่ากลับไปเริ่ม Level ที่ 1
+          </p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+
+  <!-- Video Section -->
+  <section id="video" aria-labelledby="video-heading">
+    <div class="video-wrapper">
+        <h2 id="video-heading">Video</h2>
+        <br>
+        <iframe id="promo-video" title="Demo video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+  
+      <!-- Code Section -->
+    <section id="code" aria-labelledby="code-heading">
+      <div class="code-box">
+        <br>
+        <br>
+        <h2 id="code-heading">Source Code</h2>
+        <a href="https://github.com/pineappleonthetree/PopepopepopopepoGame.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="code-button">
+            💻 PopepopepopopepoGame Code
+        </a>
+      </div>
+  
+        <!-- Poster Section -->
+      <div class="poster-box">
+        <br>
+        <h2 id="poster-heading">Project Poster</h2>
+        <a href="https://drive.google.com/file/d/1Hy9IggyvmVZ_KEzUy5CPx7wbM_ArGMrG/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="poster-button">
+              📜 PopepopepopopepoGame Poster
+        </a>
+      </div>
+    </section>
+  </section>
+
+
+  <!-- Members Section -->
+    <section id="members" aria-labelledby="members-heading">
+      <h2 id="members-heading">Members</h2>
+      <ul id="member-list">
+        <li class="member">
+          <img src="image/member01.jpeg" alt="">
+            <span class="member-name">นางสาวชยารัตน์ ฤทธิกุล</span>
+            <span class="member-id">รหัส 67070031</span>
+        </li>
+        <li class="member">
+          <img src="image/member02.jpg" alt="">
+            <span class="member-name">นางสาวชลธิชา คนธภักดี</span>
+            <span class="member-id">รหัส 67070033</span>
+        </li>
+        <li class="member">
+          <img src="image/member03.png" alt="">
+            <span class="member-name">นายญาณภัทร นิลสยาม</span>
+            <span class="member-id">รหัส 67070039</span>
+        </li>
+        <li class="member">
+          <img src="image/member04.jpg" alt="">
+            <span class="member-name">นางสาวธัญญา ชนะถาวราลักษณ์</span>
+            <span class="member-id">รหัส 67070075</span>
+        </li>
+    </ul>
+
+    </section>
+
+  </main>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+
+      if (target) {
+        // ✅ หาความสูง navbar
+        const navbar = document.querySelector('#main-nav');
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+        // ✅ คำนวณตำแหน่งใหม่ (เผื่อระยะเพิ่มอีก 40px)
+        const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navbarHeight - 40; // 👈 เพิ่ม 40px กันบังหัวข้อ
+
+        // ✅ เลื่อนแบบ smooth
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
