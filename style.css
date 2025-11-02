@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* รีเซ็ตค่าเริ่มต้น */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* ป้องกันขนาดเกินขอบจอ */
+  /* font-family: "Mali"; */
+  /* color: #29264C; */
+  /* -webkit-text-stroke: 2px white; */
+}
+
+body {
+  font-family: "Mali";
+    /* background-color: #B89AC9; */
+    padding-top: 70px;
+    overflow-x: hidden; /* ป้องกันเลื่อนแนวนอน */
+    /* background: linear-gradient(145deg, #B89AC9, #29264C); */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #29264C;
+  color: white;
+  padding: 20px 40px;
+  overflow-x: hidden; /* ป้องกัน navbar ล้น */
+}
+
+/* จัดภายใน nav ให้ชื่ออยู่ซ้าย เมนูอยู่ขวา */
+nav {
+  display: flex;
+  justify-content: space-between; /* ซ้าย-ขวา */
+  align-items: center; /* อยู่ในบรรทัดเดียวกัน */
+  max-width: 100%; /* จำกัดความกว้างสูงสุดของเนื้อหา navbar */
+  margin: 0 auto; /* จัดให้อยู่กลางหน้าจอ */
+  width: 100%;
+}
+
+/* โลโก้ทางซ้าย */
+#logo {
+  text-decoration: none;
+  color: #fbf3d0;
+  font-weight: 800;
+  font-size: 24px;
+  white-space: nowrap; /* ป้องกันชื่อโปรเจกต์ตัดบรรทัด */
+}
+
+/* เมนูทางขวา */
+#nav-links {
+  list-style: none;
+  display: flex;
+  font-weight: 700;
+  gap: 30px;
+}
+
+#nav-links a {
+  text-decoration: none;
+  color: #fbf3d0;;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+
+#nav-links a:hover {
+  color: #8f7ab8;
+
+}
+
+#start {
+  color: #29264C;
+  text-shadow: 0px 0px 5px white;
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-size: 38px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;  /* จัดกึ่งกลางแนวนอน */
+  align-items: center;
+  background: linear-gradient(180deg, #B89AC9, #3b3864);
+}
+#scroll {
+  font-size: 20px;
+}
+
+#start img {
+  width: 50px;       /* ขนาดความกว้างที่ต้องการ */
+  height: auto;
+  animation: float 1s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-5px); } /* ขยับขึ้น 10px */
+  100% { transform: translateY(0px); }
+}
+
+/* About */
+#about {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(45deg, #B89AC9, #3b3864);
+  align-items: flex-start; /* ไม่ให้ child ยืดเต็มแนวตั้ง */
+  justify-content: flex-start; /* จัดเรียงจากซ้าย */
+  gap: 50px; /* เว้นระยะระหว่างรูปกับข้อความ */
+}
+
+#about img {
+  margin-top: 150px;
+  margin-left: 50px;
+  width: 700px;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.about-text {
+  width: 500px;
+  margin-top: 180px;
+  margin-left: 40px;
+  color: white;
+}
+
+#about-heading {
+  color: #fbf3d0;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+/* Components */
+#components {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #B89AC9, #3b3864);
+}
+
+#components-heading {
+  color: #fbf3d0;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 50px;
+
+}
+#component-list {
+  padding:100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 90px; 
+}
+
+.component img {
+  width: 250px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.component h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#input {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(270deg, #B89AC9, #3b3864);
+}
+
+.containers {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 150px;
+  margin-top: 50px;
+  
+}
+
+#input-box, #Output-box {
+  width: 550px;
+  color: #ffffff;
+  padding: 30px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#input-box img , #Output-box img{
+  width: 150px;
+  height: auto;
+}
+
+#input-heading, #Output-heading, #process-heading {
+  color: #fbf3d0;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+#process {
+  width: 100%;
+  margin-top: -40px;
+}
+
+#process-box {
+  color: #ffffff;
+  width: 1200px;
+}
+
+
+#video {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(360deg, #B89AC9, #3b3864);
+  padding-top: 70px;
+}
+
+#video-heading, #code-heading, #poster-heading {
+  font-size: 36px;
+  color: #fbf3d0;
+}
+
+/* Code */
+/* ====== Code Section Style ====== */
+#code {
+  text-align: center;           /* จัดให้อยู่ตรงกลาง */
+  margin-top: 20px;
+}
+
+#code-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ====== code ปุ่มลิงก์ไป GitHub ====== */
+.code-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3b3864;    /* สีพื้นหลังเทาเข้มแบบ GitHub */
+  color: #ffffff;               /* ตัวอักษรสีขาว */
+  text-decoration: none;        /* ตัดเส้นใต้ */
+  border-radius: 8px;           /* มุมโค้ง */
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* ====== เอฟเฟกต์เมื่อเอาเมาส์วาง ====== */
+.code-button:hover {
+  background-color: #dc87e9;    /* สีน้ำเงินตอน hover */
+  box-shadow: 0 0 10px #db47eb; /* เพิ่มเรืองแสงนิดๆ */
+  transform: translateY(-2px);  /* ขยับขึ้นเล็กน้อย */
+}
+
+/* ====== Poster Section Style ====== */
+#poster {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#poster-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ====== ปุ่มลิงก์ไป Poster ====== */
+.poster-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3b3864;    /* สีพื้นหลังเทา-น้ำเงินเข้ม */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* ====== เอฟเฟกต์เมื่อเอาเมาส์วาง ====== */
+.poster-button:hover {
+  background-color: #fb64c8;    /* สีน้ำเงินสดตอน hover */
+  box-shadow: 0 0 10px #ff59e9;
+  transform: translateY(-2px);
+}
+
+/* Member */
+#members {
+  width: 100vw;
+  background: linear-gradient(90deg, #B89AC9, #3b3864);
+  text-align: center;
+  padding-top: 70px;
+}
+
+#members-heading {
+  font-size: 36px;
+  color: #fbf3d0;
+}
+
+#member-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* ให้เรียงลงบรรทัดใหม่ถ้าจอเล็ก */
+  gap: 40px;       /* ระยะห่างระหว่างสมาชิกแต่ละคน */
+  padding: 0;
+  margin: 0;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 255px; /* ขนาดกล่องแต่ละคน */
+  margin: 40px;  /* 🔹 เพิ่มระยะรอบรูปแต่ละคน */
+}
+
+.member img {
+  width: 250px;          /* ✅ ปรับขนาดรูปให้เล็กลง */
+  height: 250px;
+  object-fit: cover;     /* ตัดรูปให้พอดีกรอบ */
+  border-radius: 15px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+}
+
+.member-name {
+  font-weight: 500;
+  display: inline;
+  color: aliceblue;
+}
+
+.member-id {
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+section {
+  scroll-margin-top: 120px; /* ปรับตามจริง */
+}
